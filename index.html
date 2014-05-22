@@ -4,19 +4,39 @@
     <script type='text/javascript'>
       function draw() {
         var canvas = document.getElementById('cv');
+        var context = canvas.getContext('2d');
+
+        // line
+        context.beginPath();
+        context.moveTo(100, 500);
+        context.lineTo(450, 50);
+        context.stroke();
+
+        // overlapping rectangles
         if (canvas.getContext) {
-          var ctx = canvas.getContext('2d');
+          context.fillStyle = "rgb(200, 0, 0)";
+          context.fillRect(10, 10, 55, 50);
 
-          ctx.fillStyle = "rgb(200, 0, 0)";
-          ctx.fillRect(10, 10, 55, 50);
-
-          ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-          ctx.fillRect(30, 30, 55, 50);
+          context.fillStyle = "rgba(0, 0, 200, 0.5)";
+          context.fillRect(30, 30, 55, 50);
         }
+
+        // circle
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+        var radius = 70;
+
+        context.beginPath();
+        context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+        context.fillStyle = 'teal';
+        context.fill();
+        context.lineWidth = 1;
+        context.strokeStyle = '#333333';
+        context.stroke();
       }
     </script>
   </head>
   <body onload="draw();">
-    <canvas id="cv" width="150" height="150"></canvas>
+    <canvas id="cv" width="1000" height="1000"></canvas>
   </body>
 </html>
