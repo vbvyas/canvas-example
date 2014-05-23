@@ -33,6 +33,15 @@
         context.lineWidth = 1;
         context.strokeStyle = '#333333';
         context.stroke();
+
+        // Bezier curve
+        context.beginPath();
+        context.moveTo(200, 100);
+        // startingPoint.x, startingPoint.y, controlPoint1.x, controlPoint2.y, endingPoint.x, endingPoint.y
+        context.bezierCurveTo(150, 10, 400, 10, 400, 200);
+        context.lineWidth = 1;
+        context.strokeStyle = 'orange';
+        context.stroke();
       }
     </script>
   </head>
