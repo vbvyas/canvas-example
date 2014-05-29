@@ -12,7 +12,7 @@ function draw() {
   context.beginPath();
   // (x, y) - top left and (width, height)
   context.rect(100, 100, 400, 300);
-  context.fillStyle = '#1133EE';
+  context.fillStyle = 'rgba(200, 255, 200, 0.5)';
   context.fill();
   // line style
   context.lineWidth = 2;
