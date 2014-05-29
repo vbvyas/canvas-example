@@ -8,6 +8,17 @@ function draw() {
   context.lineTo(450, 50);
   context.stroke();
 
+  // rectangle
+  context.beginPath();
+  // (x, y) - top left and (width, height)
+  context.rect(100, 100, 400, 300);
+  context.fillStyle = '#1133EE';
+  context.fill();
+  // line style
+  context.lineWidth = 2;
+  context.strokeStyle = '#554E9A';
+  context.stroke();
+
   // overlapping rectangles
   if (canvas.getContext) {
     context.fillStyle = "rgb(200, 0, 0)";
